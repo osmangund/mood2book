@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation"
 import Shuffle from "./shuffle"
+import Link from "next/link"
 
 export default function Header() {
   // if route is / display shuffle button
@@ -14,7 +15,11 @@ export default function Header() {
           <h1 className="font-bold text-2xl">
             <a href="/">📚 Mood2Book</a>
           </h1>
-          {pathName === "/" && <Shuffle />}
+          {pathName === "/" ? (
+            <Shuffle />
+          ) : (
+            <Link href="/" className="button">Menu</Link>
+          )}
         </div>
       </nav>
     </header>

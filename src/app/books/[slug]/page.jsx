@@ -1,5 +1,6 @@
 import { moods } from "@/../contents/moods"
-import FindBooks from "@/components/findBooks"
+import DisplayBooks from "@/components/displayBooks"
+import FindBooks from "@/hooks/useFindBooks"
 
 export function getStaticPaths() {
   const paths = moods.map((mood) => ({
@@ -27,9 +28,7 @@ export default function Page({ params }) {
           Here are some books that might match your mood:
         </p>
       </div>
-      <div id="books" className="w-full min-h-80">
-        <FindBooks mood={params.slug} />
-      </div>
+      <DisplayBooks mood={params.slug} />
     </section>
   )
 }

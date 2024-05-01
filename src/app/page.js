@@ -1,4 +1,4 @@
-import BookSearch from "@/components/booksearch"
+import BookSearch from "@/components/displayBooks"
 import { moods } from "../../contents/moods"
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
               <div key={i} className="mood-card">
                 <a
                   href={`/books/${mood.text}`}
-                  className="uppercase flex gap-4"
+                  className="uppercase flex gap-4 font-bold justify-center"
                 >
                   <span>{mood.emoji}</span> <span>{mood.text}</span>
                 </a>
