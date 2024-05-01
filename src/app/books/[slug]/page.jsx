@@ -1,9 +1,9 @@
-import BookSearch2 from "@/components/booksearch2"
-import { moods } from "../../../../contents/moods"
+import { moods } from "@/../contents/moods"
+import FindBooks from "@/components/findBooks"
 
 export function getStaticPaths() {
   const paths = moods.map((mood) => ({
-    params: { slug: mood.text, mood: mood.emoji },
+    params: { slug: mood.text },
   }))
 
   return {
@@ -28,7 +28,7 @@ export default function Page({ params }) {
         </p>
       </div>
       <div id="books" className="w-full min-h-80">
-        <BookSearch2 genre={params.slug} />
+        <FindBooks mood={params.slug} />
       </div>
     </section>
   )
