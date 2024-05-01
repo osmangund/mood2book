@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import Book from "./book"
 import useFindBooks from "../hooks/useFindBooks"
 import { ClipLoader } from "react-spinners"
+import useBookCovers from "@/hooks/useBookCovers"
 
 const LoadingMessage = () => {
   return (
@@ -19,6 +20,8 @@ const LoadingMessage = () => {
 export default function DisplayBooks({ mood }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const { books, loading } = useFindBooks({ mood })
+  const images = useBookCovers({ titles: books.map((book) => book.title) })
+
   const displayAmount = 1
 
   if (loading) {
@@ -54,7 +57,7 @@ export default function DisplayBooks({ mood }) {
         {displayBooks.map((book, i) => {
           return (
             <React.Fragment key={`b__${i}`}>
-              <Book book={book} />
+              <Book book={book} image={images[i]} />
             </React.Fragment>
           )
         })}

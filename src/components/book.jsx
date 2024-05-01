@@ -1,38 +1,21 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
+import React from "react"
+import Image from "next/image"
+import useBookCovers from "@/hooks/useBookCovers"
 
-export default function Book({ book }) {
-  const [image, setImage] = useState("")
-
-  useEffect(() => {
-    const fetchBookImage = async () => {
-      if (!book) return
-      const { title } = book
-      try {
-        const response = await axios.get(
-          `https://openlibrary.org/search.json?q=${title}`
-        )
-        const firstBook = response.data.docs[0]
-        if (firstBook) {
-          setImage(firstBook.cover_edition_0)
-        }
-      } catch (error) {
-        console.error("Error fetching book image:", error)
-      }
-    }
-
-    fetchBookImage()
-  }, [book])
-
-  if (!book) {
-    return <div>No book data available</div>
-  }
-
+export default function Book({ book, image }) {
   const { title, author, publishDate, description, pageCount, rating } = book
-
+  console.log(image)
   return (
     <div className="w-1/3 book">
-      <div className="h-52" style={{ backgroundImage: `url(${image})` }}></div>
+      <div className="h-56 w-full relative flex justify-center mb-3">
+        {/* <Image
+          src={image}
+          alt={title}
+          width={200}
+          height={300}
+          className="w-32 h-56 object-cover"
+        /> */}
+      </div>
       <h2 className="font-semibold text-xl">{title}</h2>
       <p>
         <span>{author}</span> | <span>{publishDate}</span>
