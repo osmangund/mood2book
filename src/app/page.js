@@ -1,14 +1,11 @@
 import BookSearch from "@/components/displayBooks"
 import { moods } from "../../contents/moods"
+import Hero from "@/components/hero"
 
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center items-center h-40">
-        <p className="text-2xl">
-          How do you <span className="underline">feel</span> today?
-        </p>
-      </div>
+      <Hero />
       <main>
         <section id="moods" className="mood-cards px-4 md:px-36">
           {moods.map((mood, i) => {
