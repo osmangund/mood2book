@@ -1,5 +1,6 @@
 {
   "name": "mood2book",
+  "homepage": "https://osmangund.github.io/mood2book",
   "version": "0.1.0",
   "private": true,
   "scripts": {
