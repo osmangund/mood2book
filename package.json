@@ -17,6 +17,7 @@
     "react-spinners": "^0.13.8"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.7.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",

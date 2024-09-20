@@ -18,7 +18,7 @@ export default function Page({ params }) {
   const { emoji } = mood
 
   return (
-    <section className="px-4 md:px-16 min-h-[80vh] gap-16 flex flex-col items-center text-center">
+    <section className="px-4 md:px-16 min-h-[80vh] gap-8 md:gap-10 flex flex-col items-center text-center">
       <div>
         <h1 className="text-6xl mb-4">{emoji}</h1>
         <p className="text-xl mb-6">

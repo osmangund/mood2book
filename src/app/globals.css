@@ -10,7 +10,9 @@ body {
   margin: 0;
 }
 
-html {
+html,
+footer,
+header {
   background-color: lightblue;
 }
 
