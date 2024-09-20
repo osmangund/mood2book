@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={rubik.className}>
         <Header />
-        <main className="mt-16 md:mt-24">{children}</main>
+        <main className="my-16 md:my-24">{children}</main>
         <footer className="flex justify-center mt-8 fixed bottom-0 left-0 right-0">
           Created w/ 💗 by &nbsp;
           <a

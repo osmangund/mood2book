@@ -17,22 +17,22 @@ export default function Book({ book }) {
   const { isbn, coverId } = useOpenLibrary({ title })
   console.log(isbn, coverId)
   return (
-    <div className="w-full md:w-1/3 book">
+    <article className="w-full md:w-1/3 book flex flex-col gap-6">
       {coverId ? (
         <Image
           src={`https://covers.openlibrary.org/b/id/${coverId}-M.jpg`}
           alt={`${title} cover`}
           width={400}
           height={400}
-          className="w-full h-full object-scale-down mb-4"
+          className="w-full h-full object-scale-down"
         />
       ) : (
         <FakeBookCover />
       )}
 
-      <article
-        className="h-56 w-full relative flex flex-col items-center
-       justify-center mb-3"
+      <div
+        className="w-full relative flex flex-col items-center
+       justify-center"
       >
         <h2 className="font-semibold text-xl">{title}</h2>
         <span>
@@ -43,7 +43,7 @@ export default function Book({ book }) {
         <div className="mt-3">
           <p>{description}</p>
         </div>
-      </article>
-    </div>
+      </div>
+    </article>
   )
 }
